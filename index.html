@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>e-Yantra IoT Framework</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">e-Yantra IoT Framework</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Introduction</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="Spreadsheet/" class="dropdown-item">Setting up Google Spreadsheet</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="APIs/" class="nav-link">APIs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="config/" class="nav-link">Configure</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="Example/" class="nav-link">Example Code</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="Spreadsheet/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#project-overview" class="nav-link">Project Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#technology-stack" class="nav-link">Technology Stack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#database-google-sheets" class="nav-link">Database: Google Sheets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#alert-notifications-google-apps-scripting" class="nav-link">Alert Notifications: Google Apps Scripting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#iot-dashboard-highcharts" class="nav-link">IoT Dashboard: Highcharts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#remote-ota-github" class="nav-link">Remote OTA: Github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#timekeeping-public-ntp-servers" class="nav-link">Timekeeping: Public NTP Servers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#location-ip-geo-location" class="nav-link">Location: IP Geo-location</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><center><img src="./Images/e-yantra.png" alt="Italian Trulli"></center></p>
+<p><center><h1>e-Yantra IoT Framework</h1></center></p>
+<p><br></p>
+<h2 id="project-overview">Project Overview</h2>
+<p>Our project, <strong><em>'e-Yantra IoT Framework'</em></strong> attempts on creating a framework specifically designed to carry out IoT based applications with ease and without much hassle. </p>
+<p>So, what makes this framework unique! For starters, the entire framework is based on tools and services which are available for free which in turn make this framework completely free.</p>
+<p><br></p>
+<h4 id="event-driven-programming">Event Driven Programming</h4>
+<p>In this framework <strong>emphasis is given on Event-Driven Programming over Sequential Programming.</strong> This is because, IoT applications are an event driven system and using sequential programming techniques to develop event driven systems is hard and does not make much sense.</p>
+<p>The framework consists of APIs which users can use in the code as per their need. All the user will have to do is to write user defined functions and attach it to the set of events defined in the framework. So, whenever any IoT event occurs the user defined function attached to that event will be executed automatically without having the user call the function explicitly in main() or elsewhere.</p>
+<p><img alt="" src="Images/API.JPG" /></p>
+<p>Further information and usage details of these APIs will be discussed in the further sections in depth. </p>
+<p><br></p>
+<h4 id="why-use-ey-iot-framework">Why use eY IoT Framework?</h4>
+<p>There are frameworks like Azure IoT, AWS IoT, etc already designed for similar IoT based applications but what makes this framework stand apart from them is the fact that since this framework is entirely based on free tools and services it itself becomes <strong>free for use</strong>. On the other hand, the <strong>existing frameworks offer paid services.</strong> </p>
+<p>Secondly, people who are just starting out in the IoT field are already unfamiliar with many concepts and are in the learning phase. At that time if they are made to get acquaint with <strong>frameworks having steep learning curves</strong>, that in itself <strong>can act as a demotivation</strong>. This framework uses tools which many may have already used apart from IoT applications like Github and Google Spreadsheet. Usage of such tools and overall design makes this framework very <strong>user-friendly and simple</strong>!  </p>
+<p><em>So with this free, easy to use framework we wish to ease out on your load while developing IoT applications and we hope it fulfils this purpose with a great deal of satisfaction! :)</em>   </p>
+<p><br></p>
+<p><br></p>
+<h2 id="technology-stack">Technology Stack</h2>
+<p><img alt="" src="Images/iot-fw-stack.png" /></p>
+<p>The tools and services we have used in the framework are as follows:    </p>
+<ul>
+<li>Google Spreadsheet as database.  </li>
+<li>Google App Scripting for generating alert notifications.</li>
+<li>HiveMQ, a public MQTT server.</li>
+<li>Github is used to store firmware on cloud to perform remote OTA. </li>
+<li>Public NTP server pool.ntp.org for timekeeping.</li>
+<li>ip-api.com for IP based Geo-location.</li>
+</ul>
+<p>So, what activities will a user be able to carry out with this developed framework. Let's take a look...</p>
+<p><br></p>
+<h2 id="database-google-sheets">Database: Google Sheets</h2>
+<ul>
+<li>An ESP32 based endpoint like eYFi-Mega, connected to the internet can <strong>directly push sensor data to Google Spreadsheet</strong> using this framework.</li>
+<li>Google Sheets has upper limit of 5 Million rows. So, if you are logging sensor data at an interval of 1 minute then Google Sheets will allow you to log data for <strong>9 years</strong>!!</li>
+<li>Google Sheets is very powerful tool which can allow user to <strong>make sense out of their IoT Data</strong> which is also a crucial part of IoT.</li>
+</ul>
+<p><img alt="  " src="Images/Sheet.JPG" /></p>
+<p><br></p>
+<h2 id="alert-notifications-google-apps-scripting">Alert Notifications: Google Apps Scripting</h2>
+<ul>
+<li>The framework offers a facility of <strong>alerting the user via an e-mail</strong> if the sensor readings exceed a certain pre-defined threshold.</li>
+<li>Our Google Apps Script attached to Google Sheets makes this happen.</li>
+</ul>
+<p><img alt="" src="Images/email.png" /></p>
+<p><br></p>
+<h2 id="iot-dashboard-highcharts">IoT Dashboard: Highcharts</h2>
+<ul>
+<li>A <strong>dynamic graph of the readings</strong> with their time of update gets created automatically, in the spreadsheet itself, by following the framework procedures.</li>
+</ul>
+<p><img alt="" src="Images/Graph%201.png" /></p>
+<p><br></p>
+<h2 id="remote-ota-github">Remote OTA: Github</h2>
+<ul>
+<li>
+<p>Perform <strong>Remote OTA</strong> by fetching firmware from Github.</p>
+</li>
+<li>
+<p>There are two main reason for choosing Github over other free services for storing firmware</p>
+</li>
+<li>
+<p>Github is tightly integrated with modern software development workflow. So user using this framework can have source code and binary file of the firmware at one place.</p>
+</li>
+<li>Github provides static URL for files. So, even after you update the firmware file on GitHub its URL will stay the same.</li>
+</ul>
+<p><img alt="" src="Images/ota-start.png" /></p>
+<p><img alt="" src="Images/ota-success.png" /></p>
+<p><br></p>
+<h2 id="timekeeping-public-ntp-servers">Timekeeping: Public NTP Servers</h2>
+<ul>
+<li>
+<p><strong>Syncing internal clock with NTP server</strong> clock for timekeeping.</p>
+</li>
+<li>
+<p>NTP as you know stands for Network Time Protocol which is a networking protocol for clock synchronization between computer systems.</p>
+</li>
+<li>
+<p>Using this framework you just have to use one line of code to sync internal clock of your IoT device with NTP server time.</p>
+</li>
+</ul>
+<p><img alt="" src="Images/time-only.png" /></p>
+<p><br></p>
+<h2 id="location-ip-geo-location">Location: IP Geo-location</h2>
+<ul>
+<li>In the framework we are using free IP Geo-location service from <strong>ip-api.com</strong> for location estimation of IoT Device.</li>
+<li>Using this, IoT device can roughly estimate its location without the need of any specialised GPS hardware connected to it.</li>
+</ul>
+<p><img alt="" src="Images/location-only.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2020-06-27 23:28:27.977764+00:00
+-->
