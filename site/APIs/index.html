@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>APIs - e-Yantra IoT Framework</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">e-Yantra IoT Framework</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Introduction</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Spreadsheet/" class="dropdown-item">Setting up Google Spreadsheet</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">APIs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../config/" class="nav-link">Configure</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Example/" class="nav-link">Example Code</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Spreadsheet/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../config/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#apis" class="nav-link">APIs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#wi-fi" class="nav-link">Wi-Fi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mqtt" class="nav-link">MQTT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ota" class="nav-link">OTA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#database" class="nav-link">Database</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ntp" class="nav-link">NTP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#location" class="nav-link">Location</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="apis">APIs</h1>
+<p>Our framework consists of APIs which users can use in the code as per their need. All the user will have to do is include these function in the code. So, whenever any IoT event occurs the user defined function attached to this event will be executed automatically without having the user call the function explicitly in main() or elsewhere.</p>
+<p>So, below mentioned are the APIs that users can use to get their work done .  </p>
+<p><br></p>
+<h2 id="wi-fi"><strong>Wi-Fi</strong></h2>
+<hr />
+<pre><code class="c">void ey_init_wifi_sta(char str_ssid[], char str_pass[])
+</code></pre>
+
+<blockquote>
+<p>This API is used to connect to an existing Wi-Fi network. You must be having a  Wi-Fi hotspot to which you want your esp to be connected. For Wi-Fi security, WPA/WPA2 on an existing Wi-Fi network is used. Since we are using WPA/WPA2 authentication mode, this function takes SSID name and SSID key of your Wi-Fi network in order to join to this Wi-Fi network.
+</p>
+</blockquote>
+<h4 id="parameters">Parameters:</h4>
+<ul>
+<li>str_ssid[] = SSID name of your Wi-Fi network</li>
+<li>str_pass[] = SSID password of your Wi-Fi network</li>
+</ul>
+<hr />
+<pre><code class="c">void ey_wifi_auto_reconnect(void)
+</code></pre>
+
+<blockquote>
+<p>Your esp may be disconnected from your Wi-Fi network due to many reasons, e.g. the connected AP is restarted etc. It's the application's responsibility to do the reconnect. </p>
+<p>So , you can use this API to auto reconnect to your Wi-Fi network This API internally calls esp_wifi_connect() if your Wi-Fi STA is disconnected.</p>
+</blockquote>
+<h4 id="parameters-none">Parameters: None</h4>
+<p><br></p>
+<h2 id="mqtt"><strong>MQTT</strong></h2>
+<hr />
+<pre><code class="c">void ey_mqtt_start(void)
+</code></pre>
+
+<blockquote>
+<p>This API is used to  create an mqtt client handle based on the configuration and starts mqtt client with created client handle. You can set the configuration (which includes MQTT server URL and MQTT server port)  in the <em>ey_iot_config.h</em> file
+</p>
+</blockquote>
+<h4 id="parameters-none_1">Parameters: None</h4>
+<hr />
+<pre><code class="c">int ey_mqtt_publish(char str_topic[], char str_data[], unsigned char qos)
+</code></pre>
+
+<blockquote>
+<p>This API is used to send a publish message to the broker for a particular topic.
+</p>
+</blockquote>
+<h4 id="parameters_1">Parameters:</h4>
+<ul>
+<li>str_topic[] :  array which stores the topic string.</li>
+<li>str_data[] : array which stores the  payload string (set to NULL, sending empty payload message).</li>
+<li>qos : qos of publish message</li>
+</ul>
+<h4 id="return">Return:</h4>
+<ul>
+<li>msg_id  of the publish message (for QoS 0 message_id will always be zero) on success, -1 on failure.</li>
+</ul>
+<hr />
+<pre><code class="c">int ey_mqtt_subscribe(char str_topic[], unsigned char qos);
+</code></pre>
+
+<blockquote>
+<p>This API is used to subscribe the client to defined topic with defined qos.
+</p>
+</blockquote>
+<h4 id="parameters_2">Parameters:</h4>
+<ul>
+<li>
+<p>str_topic[] : array which stores the topic string.</p>
+</li>
+<li>
+<p>qos : qos of subscribe message</p>
+</li>
+</ul>
+<h4 id="return_1">Return:</h4>
+<ul>
+<li>msg_id of the subscribe message on success,  -1 on failure.</li>
+</ul>
+<hr />
+<pre><code class="c">int ey_mqtt_unsubscribe(char str_topic[]);
+</code></pre>
+
+<blockquote>
+<p>This API is used to unsubscribe the client from defined topic.
+</p>
+</blockquote>
+<h4 id="parameters_3">Parameters:</h4>
+<ul>
+<li>str_topic[] : array which stores the topic string.</li>
+</ul>
+<h4 id="return_2">Return:</h4>
+<ul>
+<li>msg_id of the subscribe message on success,  -1 on failure.</li>
+</ul>
+<p><br></p>
+<h2 id="ota"><strong>OTA</strong></h2>
+<hr />
+<pre><code class="c">int ey_ota_start(void);
+</code></pre>
+
+<blockquote>
+<p>This API is used to start the remote OTA. It  allocates HTTPS OTA Firmware upgrade context, establishes HTTPS connection, reads image data from HTTP stream and writes it to OTA partition and finishes HTTPS OTA Firmware upgrade operation. This API supports URL redirection, but if CA cert of URLs differ then it should be appended to <code>cert_pem</code> member of <code>config</code>  (defined in function <em>void ey_iot_ota_task(void</em> <em>pvParameter)</em>). You can define your Remote OTA URL in <em>ey-iot_config.h</em>  file.
+</p>
+</blockquote>
+<h4 id="parameters-none_2">Parameters: None</h4>
+<hr />
+<pre><code class="c">int ey_ota_advanced_start(int ota_mode);
+</code></pre>
+
+<blockquote>
+<p>​    It is used to create the advanced_ota_example with a user defined mode passed as a parameter to the function. </p>
+</blockquote>
+<h4 id="parameter">Parameter:</h4>
+<ul>
+<li>To start OTA in smart mode pass int ota_mode as 0.</li>
+<li>To start OTA in forced mode pass int ota_mode as 1.</li>
+<li>For any other value of int ota_mode forced mode will be activated. </li>
+</ul>
+<h4 id="return_3">Return:</h4>
+<ul>
+<li>Returns 0 on success.</li>
+</ul>
+<p><br></p>
+<h2 id="database"><strong>Database</strong></h2>
+<hr />
+<pre><code class="c">int ey_push_sensor_data(unsigned char mode, float sensor_value);
+</code></pre>
+
+<blockquote>
+<p>This API is used to used push one sensor data to your database.
+</p>
+</blockquote>
+<h4 id="parameters_4">Parameters:</h4>
+<ul>
+<li>
+<p>mode : GOOGLE_SHEET if you are using google Spreadsheets as your database.</p>
+</li>
+<li>
+<p>sensor_value : readings of your sensor.</p>
+</li>
+</ul>
+<hr />
+<pre><code class="c">int x_ey_push_sensor_data(unsigned char mode, int number_of_values, ... );
+</code></pre>
+
+<blockquote>
+<p>This API is used to push more than one sensor data  to your database.
+</p>
+</blockquote>
+<h4 id="parameters_5">Parameters:</h4>
+<ul>
+<li>
+<p>mode : GOOGLE_SHEET ,  if you are using google spreadsheets as your database.</p>
+</li>
+<li>
+<p>number_of_values : number of values you wanted to push</p>
+</li>
+</ul>
+<p><br></p>
+<h2 id="ntp"><strong>NTP</strong></h2>
+<hr />
+<pre><code class="c">int ey_init_nvs(void);
+</code></pre>
+
+<blockquote>
+<p>Initialize the default NVS partition.</p>
+<p>This API initialises the default NVS partition. The default NVS partition is the one that is labeled “nvs” in the partition table.</p>
+</blockquote>
+<h4 id="return_4">Return:</h4>
+<ul>
+<li>ESP_OK if storage was successfully initialized.</li>
+<li>ESP_ERR_NVS_NO_FREE_PAGES if the NVS storage contains no empty pages (which may happen if NVS partition was truncated)</li>
+<li>ESP_ERR_NOT_FOUND if no partition with label “nvs” is found in the partition table</li>
+<li>one of the error codes from the underlying flash storage driver.</li>
+</ul>
+<hr />
+<pre><code class="c">void ey_init_ntp(void)
+</code></pre>
+
+<blockquote>
+<p>It is used to set the system time. It makes 10 retrys and restarts the esp if the system time is not set even after 10th try.
+</p>
+</blockquote>
+<hr />
+<pre><code class="c">time_t ey_sntp_get_epoch(void);
+</code></pre>
+
+<blockquote>
+<p>This API gets the current system time and checks whether it is set or not. If it is not set then it first initializes SNTP and then tries to set the time following the method in <em>void ey_init_ntp</em>. it restarts the esp module and returns the current set time. </p>
+</blockquote>
+<h4 id="return_5">Return:</h4>
+<ul>
+<li>It returns the current set system time.</li>
+</ul>
+<hr />
+<pre><code class="c">char* ey_sntp_date_string(void)
+</code></pre>
+
+<blockquote>
+<p>This API is used to get the current date and the time string. It returns the date and time through a single character array. The date and time are stored as <em>'YY-MM-DD HH:MM:SS'</em> in the datestring returned by this function.</p>
+</blockquote>
+<h4 id="return_6">Return:</h4>
+<ul>
+<li>Returns character array storing value of system date and time in the above mentioned format.</li>
+</ul>
+<hr />
+<p><br></p>
+<h2 id="location"><strong>Location</strong></h2>
+<hr />
+<pre><code class="c">void ey_populate_isp_location(void)
+</code></pre>
+
+<p>This API is used to fetch information about ISP including its location. Information is received in JSON format.</p>
+<pre><code class="json">    {
+        &quot;status&quot;: &quot;success&quot;, 
+        &quot;country&quot;: &quot;India&quot;, 
+        &quot;countryCode&quot;: &quot;IN&quot;, 
+        &quot;region&quot;: &quot;GJ&quot;, 
+        &quot;regionName&quot;: &quot;Gujarat&quot;, 
+        &quot;city&quot;: &quot;Ahmedabad&quot;, 
+        &quot;zip&quot;: &quot;380052&quot;, 
+        &quot;lat&quot;: 23.0276, 
+        &quot;lon&quot;: 72.5871, 
+        &quot;timezone&quot;: &quot;Asia/Kolkata&quot;, 
+        &quot;isp&quot;: &quot;Reliance Jio Infocomm Limited&quot;, 
+        &quot;org&quot;: &quot;RJIL Gujarat LTE SUBSCRIBER PUBLIC&quot;, 
+        &quot;as&quot;: &quot;AS55836 Reliance Jio Infocomm Limited&quot;, 
+        &quot;query&quot;: &quot;157.32.130.153&quot;
+    }
+</code></pre>
+
+<p>This information from the JSON is stored in <code>ey_iot</code> object.</p>
+<pre><code class="c++">ey_iot.isp_country
+ey_iot.isp_region
+ey_iot.isp_regionName
+ey_iot.isp_city
+ey_iot.isp_zip
+ey_iot.isp_lat
+ey_iot.isp_lon
+ey_iot.isp_timezone
+ey_iot.isp_org
+ey_iot.isp_as
+ey_iot.isp_public_ip
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

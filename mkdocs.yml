@@ -1,0 +1,10 @@
+site_name: e-Yantra IoT Framework
+
+nav:
+    - Introduction: 'index.md'
+    - 'User Guide':
+                   - Setting up Google Spreadsheet: 'Spreadsheet.md'
+                   
+    - APIs: 'APIs.md'
+    - Configure: 'config.md'
+    - Example Code : 'Example.md'
