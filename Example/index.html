@@ -101,7 +101,7 @@
 
 <h1 id="example">Example</h1>
 <p>In the previous sections, you have seen that our framework consists of APIs which you can use in the code as per your need. All you have to do is include these functions in your code.  So, whenever any IoT event occurs the user defined function attached to this event will be executed automatically without having the user call the function explicitly in main() or elsewhere.</p>
-<p>This section consists of an example code that uses our APIs. This example pushes a data to the google Spreadsheet , performs Over-the-Air Updates using encrypted firmware stored in a Github Repo .</p>
+<p>This section consists of an example code that uses our APIs. This example pushes a data to the google Spreadsheet , and when initiated using MQTT, performs Over-the-Air Update by fetching firmware stored in a Github Repo.</p>
 <pre><code class="c">//------------------------------------------------------------------------------
 #include &quot;ey_iot.h&quot;
 #include &quot;ey_iot_config.h&quot;
